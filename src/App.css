@@ -13,6 +13,9 @@ h1 {
 .label {
   background-color: #fff;
 }
+.button {
+  margin: 10px 0;
+}
 li {
   list-style: none;
 }

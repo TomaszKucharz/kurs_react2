@@ -1,24 +1,10 @@
 import "./App.css";
 import Header from "./commponets/Header";
 import Users from "./commponets/Users";
+import Button from "@mui/material/Button";
+import React, { useState } from "react";
 
-const data = [
-  {
-    id: 1,
-    name: "Johan",
-    age: 24,
-  },
-  {
-    id: 2,
-    name: "Józiu",
-    age: 26,
-  },
-  {
-    id: 3,
-    name: "Jola",
-    age: 28,
-  },
-];
+// const txxt = "Tomek";
 const people = [
   {
     name: "Anton",
@@ -54,12 +40,24 @@ const people = [
   },
 ];
 const functionMap = () => {
+  const data = [
+    {
+      id: 1,
+      name: "Johan",
+      age: 24,
+    },
+  ];
   const persons = [...data].map((person) => (
     <li key={person.id}>{` ${person.name},wiek: ${person.age}`}</li>
   ));
   return persons;
 };
+const handleClick = () => {
+  return console.log(`rx`);
+};
 function App() {
+  const [inputValue, setInputValue] = useState("");
+
   return (
     <div className="App">
       <Header />
@@ -70,6 +68,25 @@ function App() {
       <ul>{functionMap()}</ul>
       <hr />
       <Users people={people} />
+      <Button variant="contained" onClick={handleClick}>
+        Click
+      </Button>
+      <br />
+      <Button variant="contained">Contained</Button>
+      <br />
+      <Button variant="contained">Contained</Button>
+      <br />
+      <input
+        type="number"
+        id="info"
+        placeholder="add age"
+        onChange={(e) => setInputValue(e.target.value)}
+      />
+      <br />
+      <label htmlFor="info">
+        {inputValue ? `your age is: ${inputValue} years` : `musisz podać wiek!`}
+      </label>
+      <br />
     </div>
   );
 }
