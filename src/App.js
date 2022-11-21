@@ -19,8 +19,41 @@ const data = [
     age: 28,
   },
 ];
+const people = [
+  {
+    name: "Anton",
+    age: 12,
+  },
+  {
+    name: "Ala",
+    age: 126,
+  },
+  {
+    name: "Johana",
+    age: 23,
+  },
+  {
+    name: "Mućka",
+    age: 29,
+  },
+  {
+    name: "Doha",
+    age: 31,
+  },
+  {
+    name: "Fiona",
+    age: 33,
+  },
+  {
+    name: "Marek",
+    age: 19,
+  },
+  {
+    name: "Eustachy",
+    age: 32.5,
+  },
+];
 const functionMap = () => {
-  // console.log(data);
   const persons = [...data].map((person) => (
     <li key={person.id}>{` ${person.name},wiek: ${person.age}`}</li>
   ));
@@ -36,7 +69,7 @@ function App() {
       <p>users:</p>
       <ul>{functionMap()}</ul>
       <hr />
-      <Users />
+      <Users people={people} />
     </div>
   );
 }
